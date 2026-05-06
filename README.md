@@ -16,12 +16,40 @@ Only scan systems you **own** or where you have **explicit permission** to test.
 - Simple service name mapping (port → common TCP service)
 - Optional export to JSON/TXT
 
-## Installation
+## Download
+
+### Linux (Git)
 
 ```bash
+git clone https://github.com/vinceiris65-crypto/vince-portscanner.git port-scanner
+cd port-scanner
+```
+
+### Linux (ZIP)
+
+```bash
+# Default branch ZIP download (change `main` if your default branch is different)
+curl -L -o port-scanner.zip "https://github.com/vinceiris65-crypto/vince-portscanner/archive/refs/heads/main.zip"
+unzip port-scanner.zip
+cd port-scanner*
+```
+
+## Installation
+
+### Linux / macOS
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+### Windows (PowerShell)
+
+```powershell
 python -m venv .venv
 .\.venv\Scripts\activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ## Usage
@@ -29,30 +57,29 @@ pip install -r requirements.txt
 Default scan (`1–1024`):
 
 ```bash
-python main.py 192.168.1.1
+python3 main.py 192.168.1.1
 ```
 
 Custom range:
 
 ```bash
-python main.py 192.168.1.1 1 2000
+python3 main.py 192.168.1.1 1 2000
 ```
 
 Specific ports/ranges:
 
 ```bash
-python main.py example.com -p "22,80,443,8000-8100"
+python3 main.py example.com -p "22,80,443,8000-8100"
 ```
 
 Tune performance:
 
 ```bash
-python main.py 192.168.1.1 1 1024 -w 300 --timeout 0.3
+python3 main.py 192.168.1.1 1 1024 -w 300 --timeout 0.3
 ```
 
 Export:
 
 ```bash
-python main.py 192.168.1.1 -p "22,80,443" --json results.json --txt results.txt
+python3 main.py 192.168.1.1 -p "22,80,443" --json results.json --txt results.txt
 ```
-
