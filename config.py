@@ -1,0 +1,9 @@
+DEFAULT_START_PORT = 1
+DEFAULT_END_PORT = 1024
+DEFAULT_TIMEOUT_S = 0.5
+DEFAULT_WORKERS = 200
+
+# Hard safety limits to reduce accidental misuse.
+MAX_PORTS = 20000
+MAX_WORKERS = 2000
+
